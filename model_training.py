@@ -6,11 +6,10 @@ from sklearn.model_selection import train_test_split
 from preprocess import preprocess_text
 
 # Load dataset
-data = pd.read_csv("spam.csv", encoding="latin-1")
+data = pd.read_csv("spam.csv", encoding="latin-1",on_bad_lines='skip')
 
 # Clean dataset
-data = data[['v1', 'v2']]
-data.columns = ['label', 'message']
+data = data[['label', 'message']]
 
 # Convert labels to numbers
 data['label'] = data['label'].map({'ham': 0, 'spam': 1})
