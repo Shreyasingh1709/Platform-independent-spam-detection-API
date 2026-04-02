@@ -1,15 +1,19 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from predictor import predict_spam
+from database import insert_data
 
 app = FastAPI(title="Platform Independent Spam Detection API")
 
 class PredictRequest(BaseModel):
     text: str
 
+
 @app.post("/predict")
 def predict(request: PredictRequest):
     result = predict_spam(request.text)
+    # Store in database (confidence is set to None for now)
+    insert_data(request.text, result, None)
     return {
         "prediction": result,
         "status": "success"
