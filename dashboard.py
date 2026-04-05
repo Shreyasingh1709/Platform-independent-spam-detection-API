@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 
 # --- Hardcoded SQL password (URL-encoded @ as %40) ---
-sql_password = "sh170903%40"
+sql_password = "your_sql_password"
 
 # --- Streamlit App Title ---
 st.title("📧 Email Spam Detection Dashboard")
