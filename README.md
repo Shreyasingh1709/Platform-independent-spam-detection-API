@@ -13,21 +13,11 @@ This project is a platform-independent spam detection system using a Naive Bayes
 - **Preprocessing**: Cleans and normalizes email text before prediction
 - **Database**: Stores all predictions and supports analytics
 
+
 ## System Architecture
 
-```mermaid
-graph TD
-	A[User/Email Client] -->|Send email text| B[API (FastAPI)]
-	B -->|Predict spam/ham & confidence| C[Database (MySQL)]
-	B -->|Return prediction & confidence| A
-	C -->|Data for analytics| D[Dashboard (Streamlit)]
-	D -->|Show analytics, trends, predictions| A
-	B -->|Uses| E[Naive Bayes Model (model.pkl)]
-	B -->|Uses| F[TF-IDF Vectorizer (vectorizer.pkl)]
-	B -->|Preprocess| G[Preprocessing (preprocess.py)]
-	D -->|Fetches from| C
-	D -->|Single message prediction| B
-```
+![System Architecture](architecture.png)
+
 
 ## Usage
 
