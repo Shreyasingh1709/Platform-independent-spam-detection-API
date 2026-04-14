@@ -5,7 +5,7 @@ def create_connection():
     conn = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="sh170903@",
+        password="your_sql_password",
         database="spam_db"
     )
     # Ensure table exists
